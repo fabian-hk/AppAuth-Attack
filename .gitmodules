@@ -1,0 +1,4 @@
+[submodule "AppAuth-Android"]
+	path = AppAuth-Android
+	url = git@github.com:fabian-hk/AppAuth-Android.git
+	branch = AppAuth-Attack
