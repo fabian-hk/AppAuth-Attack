@@ -1,6 +1,17 @@
 # Description
+This repository shows a code stealing attack
+on the AppAuth-Android library that is possible
+if a custom scheme is used as the redirect URL.
+The attack leverages the fact that users have to
+choose between apps if a custom scheme is registered
+by multiple apps. If the user chooses the malicious app
+and the authorization flow does not use PKCE, the 
+adversary can
+exchange the authorization code for an ID Token
+at the token endpoint. The procedure of the attack
+can be seen in the following sequence diagram:
 
-
+<img src="https://www.plantuml.com/plantuml/png/XO_HIWCn44NVynL3NxHWVs0H8LIBuiDAenymn5aIMdPYCal1htV2sbq2Wc-PUy_atf4eP-h0Yg0_mU7C5sCIPea-9Xm5FWhbHkXTCswUUQGYO5FQ01O8sDhpnvHloe9WYrXdJ4s1tODkT-14JR2J1Cxn6oNoQ09MrxgkrU58NrDDlqHL9u6tr_sJwHtSx_w4I-An4Dnw_gJj7AfahsG_33fWIk03HqzBeshk0tCXBRxUecJDKG3nlnnSoh_pYTRIg_rRzsfVruyqP2fXrk_WvN5-RNy00">
 
 # Requirements
 

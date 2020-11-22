@@ -1,0 +1,18 @@
+@startuml
+title: Attack Flow
+
+participant User
+participant OS
+participant "Honest App" as ha
+participant "Attacker's App" as aa
+participant AS
+
+User -> ha: Start Authorization
+ha -> AS: Authorization Request without PKCE
+OS <- AS: Authorization Response (code)
+User <- OS: Offer app choice
+User -> OS: Chooses attacker's app
+OS -> aa: Authorization Response (code)
+aa -> AS: Token Request (code)
+aa <- AS: Token Response (Refresh Token, ID Token)
+@enduml
