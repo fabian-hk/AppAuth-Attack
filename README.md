@@ -39,10 +39,3 @@ AppAuth-Attack app on your virtual device
 7. Start the OpenID Connect flow in the AppAuth
 app and choose at the redirect back to the app the 
 AqqAuth app.
-
-# License
-
-This project is licensed under the MIT License
-with the exception of the app icons which
-are from the [AppAuth-Android](https://github.com/openid/AppAuth-Android)
-project and thereby licensed under the Apache-2.0 License.
