@@ -1,17 +1,15 @@
 # Description
 This repository shows a code stealing attack
-on the AppAuth-Android library that is possible
-if a custom scheme is used as the redirect URL.
+by the example of the AppAuth-Android library. The attack is possible
+if a custom scheme is used as the redirect URL and if no PKCE is used.
 The attack leverages the fact that users have to
 choose between apps if a custom scheme is registered
-by multiple apps. If the user chooses the malicious app
-and the authorization flow does not use PKCE, the 
-adversary can
+by multiple apps. If the user chooses the malicious app the adversary can
 exchange the authorization code for an ID Token
 at the token endpoint. The procedure of the attack
 can be seen in the following sequence diagram:
 
-<img src="https://www.plantuml.com/plantuml/png/XO_HIWCn44NVynL3NxHWVs0H8LIBuiDAenymn5aIMdPYCal1htV2sbq2Wc-PUy_atf4eP-h0Yg0_mU7C5sCIPea-9Xm5FWhbHkXTCswUUQGYO5FQ01O8sDhpnvHloe9WYrXdJ4s1tODkT-14JR2J1Cxn6oNoQ09MrxgkrU58NrDDlqHL9u6tr_sJwHtSx_w4I-An4Dnw_gJj7AfahsG_33fWIk03HqzBeshk0tCXBRxUecJDKG3nlnnSoh_pYTRIg_rRzsfVruyqP2fXrk_WvN5-RNy00">
+<img src="https://www.plantuml.com/plantuml/png/XP51ImCn48Nlyok6NhJIGlLOYhGKHV2mukgv3DafEtIRn6IMWh_U2SN0Wk1bITxxPjvRiirAISVp0FaaFbAYCtPHy66rWkneu79QtTtR1q151rxZJfNS2P-7S04Wfo7XP-O4DgtY999NRDh9TVOIF6V5NOmpf8mzJUthIautkI8qHNOjG4d1vQDDhx6rtgQEseSatwGIFFHahf7hgOxl_3MMz8kOEYg-lUwVe6bni_mJpZ7up7ZhGiVpQwYHZP7DyMWNYX5T7yHnRLJCVHz2PYjU_wMG9SS0elzog9R_22UkfSqUXBqUf5jW9JVB2VcxAV4nSUuFMlG5IdSzpM7BlhD7_W40">
 
 # Requirements
 
@@ -35,7 +33,7 @@ file of the ``AppAuth-Attack`` project and into the
 ``res/raw/auth_config.json`` file of the ``AppAuth-Android``
 project
 6. Compile and install the AppAuth-Android and
-AppAuth-Attack app on your virtual device
+AppAuth-Attack app on your virtual device.
 7. Start the OpenID Connect flow in the AppAuth
 app and choose at the redirect back to the app the 
 AqqAuth app.

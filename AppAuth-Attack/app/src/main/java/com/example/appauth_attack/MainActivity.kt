@@ -25,7 +25,7 @@ import androidx.loader.content.AsyncTaskLoader as AsyncTaskLoader
 
 class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<MainActivity.Response> {
 
-    val CLIENT_ID = "jx54umhoylywu"
+    val CLIENT_ID = "vmgmkqxeq3mzy"
 
     var codeStr = ""
     lateinit var loaderManager: LoaderManager
